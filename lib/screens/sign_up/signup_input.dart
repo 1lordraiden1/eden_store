@@ -1,3 +1,4 @@
+import 'package:eden_mare_store/screens/login/login_screen.dart';
 import 'package:eden_mare_store/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,36 +13,38 @@ class SignInInputScreen extends StatelessWidget {
     var passwordController = TextEditingController();
     var passwordConfirmController = TextEditingController();
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
       child: Form(
         key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 95,
-                  width: 190,
+                  height: 105,
+                  width: 200,
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Email",
+                        "First name",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       TextFormField(
-                        controller: emailController,
+                        controller: firstNameController,
                         decoration: const InputDecoration(
-                          label: Text("Enter your email"),
+                          label: Text("Enter your name"),
                           border: OutlineInputBorder(),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Enter Corret Email";
+                            return "Enter your name";
                           } else {
                             return null;
                           }
@@ -50,28 +53,32 @@ class SignInInputScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 Container(
-                  height: 100,
+                  height: 105,
                   width: 200,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        "Email",
+                        "Last name",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       TextFormField(
-                        controller: emailController,
+                        controller: lastNameController,
                         decoration: const InputDecoration(
-                          label: Text("Enter your email"),
+                          label: Text("Enter your last name"),
                           border: OutlineInputBorder(),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Enter Corret Email";
+                            return "Enter your last name";
                           } else {
                             return null;
                           }
@@ -97,7 +104,7 @@ class SignInInputScreen extends StatelessWidget {
               ),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Enter Corret Email";
+                  return "Enter your email";
                 } else {
                   return null;
                 }
@@ -121,7 +128,31 @@ class SignInInputScreen extends StatelessWidget {
               ),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Enter Corret Email";
+                  return "Enter your password";
+                } else {
+                  return null;
+                }
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Password",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            TextFormField(
+              controller: passwordController,
+              decoration: const InputDecoration(
+                label: Text("Enter your password"),
+                border: OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Enter your password";
                 } else {
                   return null;
                 }
@@ -157,7 +188,7 @@ class SignInInputScreen extends StatelessWidget {
                     color: Colors.black87,
                     borderRadius: BorderRadius.circular(5)),
                 child: const Text(
-                  "Sign in",
+                  "Sign up",
                 ),
               ),
             ),
@@ -182,7 +213,7 @@ class SignInInputScreen extends StatelessWidget {
                       color: Colors.black87,
                     ),
                     Text(
-                      "Sign in with Google",
+                      "Sign up with Google",
                       style: TextStyle(
                         color: Colors.black87,
                         fontWeight: FontWeight.bold,
@@ -198,18 +229,18 @@ class SignInInputScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an account"),
+                const Text("have an account already"),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
+                          builder: (context) => const LoginScreen(),
                         ),
                       );
                     },
                     child: const Text(
-                      "Sign up",
+                      "Sign in",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
