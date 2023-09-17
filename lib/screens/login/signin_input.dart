@@ -1,3 +1,5 @@
+import 'package:eden_mare_store/screens/Home/home_layout.dart';
+import 'package:eden_mare_store/screens/login/login_screen.dart';
 import 'package:eden_mare_store/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +7,9 @@ class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    Widget homeScreen = HomeLayout();
+    Widget ActiveScreen = LoginScreen();
+
     final formKey = GlobalKey<FormState>();
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
@@ -80,7 +85,14 @@ class SignInScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                if (formKey.currentState!.validate()) {}
+                if (formKey.currentState!.validate()) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeLayout(),
+                    ),
+                  );
+                }
               },
               child: Container(
                 alignment: Alignment.center,

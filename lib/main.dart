@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Eden Store',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.black87, foregroundColor: Colors.white),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all(
