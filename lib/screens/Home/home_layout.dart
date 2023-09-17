@@ -1,12 +1,13 @@
+import 'package:eden_mare_store/shared/style/color.dart';
+import 'package:eden_mare_store/shared/style/dimentions.dart';
 import 'package:flutter/material.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: iconV2,
       appBar: AppBar(
         leading: Icon(Icons.access_alarm),
         actions: [
@@ -64,7 +65,9 @@ class HomeLayout extends StatelessWidget {
       body: Column(
         children: [
           Text("EDEN MARE"),
-          SizedBox(height: ,)
+          SizedBox(
+            height: height * 0.4,
+          )
         ],
       ),
     );
