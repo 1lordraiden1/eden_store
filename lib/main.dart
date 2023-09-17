@@ -1,5 +1,7 @@
+import 'package:eden_mare_store/screens/Intro/page_view_model/pages_list.dart';
 import 'package:eden_mare_store/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    void _onIntroEnd(context) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+      );
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Eden Store',
@@ -44,7 +52,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home: Scaffold(
+        body: IntroductionScreen(
+            pages: pages,
+            showNextButton: true,
+            next: const Text("Next"),
+            done: const Text(
+              "Done",
+              style: TextStyle(color: Colors.black),
+            ),
+            showDoneButton: true,
+            onDone: () {}),
+      ),
     );
   }
 }

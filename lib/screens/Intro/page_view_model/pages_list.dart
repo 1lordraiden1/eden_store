@@ -4,7 +4,9 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 List<PageViewModel> pages = [
   PageViewModel(
-    titleWidget: Column(
+    title: "Store",
+    
+    bodyWidget: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("EDEN MARE"),
@@ -14,5 +16,6 @@ List<PageViewModel> pages = [
         Text("Discover Beauty and Style"),
       ],
     ),
+    footer: TextButton(child: Text("Shop Now"),onPressed: (){},)
   ),
 ];
