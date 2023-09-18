@@ -12,7 +12,7 @@ class HomeLayout extends StatelessWidget {
         leading: const Icon(Icons.access_alarm),
         actions: [
           PopupMenuButton(
-            itemBuilder: (context) => [
+            itemBuilder: (context) => const [
               PopupMenuItem(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

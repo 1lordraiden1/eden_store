@@ -82,18 +82,21 @@ class IntroScreen extends StatelessWidget {
   final void Function() switchScreen;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return IntroductionScreen(
-        pages: pages,
-        showNextButton: true,
-        next: const Text("Next"),
-        done: const Text(
-          "Done",
-          style: TextStyle(color: Colors.black),
-        ),
-        showDoneButton: true,
-        onDone: () {
-          switchScreen();
-        });
+      pages: pages,
+      showNextButton: true,
+      next: const Icon(
+        Icons.navigate_next,
+        color: Colors.black87,
+      ),
+      done: const Text(
+        "Shop Now",
+        style: TextStyle(color: Colors.black),
+      ),
+      showDoneButton: true,
+      onDone: () {
+        switchScreen();
+      },
+    );
   }
 }
