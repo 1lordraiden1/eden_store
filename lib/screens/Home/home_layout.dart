@@ -9,7 +9,7 @@ class HomeLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: iconV2,
       appBar: AppBar(
-        leading: Icon(Icons.access_alarm),
+        leading: const Icon(Icons.access_alarm),
         actions: [
           PopupMenuButton(
             itemBuilder: (context) => [
@@ -64,7 +64,7 @@ class HomeLayout extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text("EDEN MARE"),
+          const Text("EDEN MARE"),
           SizedBox(
             height: height * 0.4,
           )
